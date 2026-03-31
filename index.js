@@ -32,3 +32,10 @@
   .catch((err) => {
     console.error(err);
 })
+Promise.any([p1, p2, p3]).then((res) =>{
+    // It will give the object
+        console.log(res);
+  })
+  .catch((err) => {
+    console.error(err);
+})
