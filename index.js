@@ -1,9 +1,9 @@
   const p1 = new Promise((resolve, reject)=>{
-    setTimeout(()=> resolve("p1 Success"), 1000);
+    setTimeout(()=> resolve("p1 Success"), 3000);
   });
 
    const p2 = new Promise((resolve, reject)=>{
-    setTimeout(()=> reject("p2 rejected"), 3000);
+    setTimeout(()=> reject("p2 rejected"), 1000);
   });
 
    const p3 = new Promise((resolve, reject)=>{
@@ -11,7 +11,22 @@
   });
 
   
-  Promise.all([p1, p2, p3]).then((res) =>{
+//   Promise.all([p1, p2, p3]).then((res) =>{
+//         console.log(res);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+// })
+
+//  Promise.allSettled ([p1, p2, p3]).then((res) =>{
+//     // It will give the object
+//         console.log(res);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+// })
+ Promise.race ([p1, p2, p3]).then((res) =>{
+    // It will give the object
         console.log(res);
   })
   .catch((err) => {
